@@ -34,11 +34,11 @@ Flatiron Rails App - Feedly
         6. summary
 5. Category
     1. relationships
-        1. has many feeds through category_feed
-        2. has many category_feeds
+        1. has many feeds through feed_categories
+        2. has many feed_categories
     2. attributes
         1. title
-6. Category_Feed
+6. Feed Category
     1. relationships
         1. belongs to a feed
         2. belongs to a category
@@ -51,7 +51,7 @@ Flatiron Rails App - Feedly
     2. attributes
         1. name
         2. password
-8. User_Feed
+8. Feed_Subscriptions
     1. relationships
         1. belongs to a user
         2. belongs to a feed
