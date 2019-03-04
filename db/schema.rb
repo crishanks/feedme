@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
   end
 
   create_table "feeds", force: :cascade do |t|
+    t.string "title"
     t.string "url"
     t.text "description"
     t.datetime "created_at", null: false
