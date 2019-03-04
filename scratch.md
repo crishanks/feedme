@@ -8,7 +8,7 @@ Flatiron Rails App - Feedly
     2. attributes
         1. description
         2. url
-        3. title? (We need to research where to get the title. Maybe from HTML header?)
+        3. title (use .title)
 2. Tag
     1. relationships
         1. has many entries through entry_tag
