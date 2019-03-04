@@ -17,3 +17,32 @@ one_done = Feed.create(url: one_feed.url, description: one_feed.description, tit
 one_feed.entries.each do |entry|
   Entry.create(feed: one_done, title: entry.title, url: entry.url, author: entry.author, published_datetime: entry.published, summary: entry.summary)
 end
+users = User.create(
+    [
+        {name: "Greg"},
+        {name: "Ted"},
+        {name: "Jill"},
+        {name: "Barbara"},
+        {name: "Steve"}
+    ]
+)
+
+categories = Category.create(
+    [
+        {title: "Music"},
+        {title: "Tech"},
+        {title: "Food"},
+        {title: "Education"},
+        {title: "Woodworking"}
+    ]
+)
+
+tags = Tag.create(
+    [
+        {name: "Top 5"},
+        {name: "Really Cool"},
+        {name: "To Try Later"},
+        {name: "Great for Christmas"},
+        {name: "So fun!"}
+    ]
+)
