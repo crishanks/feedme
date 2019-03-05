@@ -1,7 +1,7 @@
 Flatiron Rails App - Feedly
 
 # Models
-1. Feed 
+1. Feed
     1. relationships
         1. has many categories
         2. has many entries
@@ -57,6 +57,17 @@ Flatiron Rails App - Feedly
         2. belongs to a feed
     2. attributes
 
+# Routes / Controllers
+- Users Controller
+- Feeds Controller
+  - show, index, (new, create), destroy
+- Entries Controller
+  - show, index
+- Categories Controller
+  - show, index, new, create, destroy, edit, update (name?)
+- Tags Controller
+  - show, index, new, create, destroy, edit, update (name?)
+
 # Functionality
 # MVP
 1. Add Content Page
@@ -79,3 +90,11 @@ Flatiron Rails App - Feedly
 # Tools and Gems
 1. Feedbag - find rss feed urls
 2. Feedjira - parse actual rss feed from rss urls
+
+# Future Features
+- Entries
+  -
+  - capture state (read / unread or something)
+- Feeds
+  - add Feed name aliases
+  - on `feed#show`, group entries by published date

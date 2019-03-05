@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :tags
-  resources :entries
+  resources :entries, only: [:show, :index]
   resources :categories
-  resources :feeds
+  resources :feeds, only: [:show, :index]
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
