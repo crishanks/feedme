@@ -53,6 +53,6 @@ urls.each do |url|
   end
 end
 
-# User.all.sample(3).each do |user|
-  # user.feeds = Feed.all.sample(1)
-# end
+User.all.sample(3).each do |user|
+  user.feeds = Feed.all.sample(1)
+end
