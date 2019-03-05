@@ -72,6 +72,30 @@ Flatiron Rails App - Feedly
 - Tags Controller
   - show, index, new, create, destroy, edit, update (name?)
 
+- `Feed#search`
+  - is url in `Feed.all`?
+    - yes,
+      - show found feed with link to create
+      - clicking link adds feed_subscription for user
+    - no,
+      - find feed w feedbag
+        - found?
+          - fetch / parse w feedjira
+          - create Feed w `Feed.new` / `build`
+          - show new/built Feed w link to create
+          - clicking link adds feed_subscription for user
+        - not found?
+          - flash msg "Sorry no feed exists"
+          - (STAGE 2) suggest other feed
+  - `search` returns
+    - a new Feed that hasn't been saved yet
+    - OR no Feed
+- `feed#new`
+  - @feed = Feed.search(search term from params)
+  - if Feed.search(search term from params) nil then flash message
+- `feed#new.erb`
+  - form_tag
+
 # Functionality
 # MVP
 1. Add Content Page
@@ -97,8 +121,10 @@ Flatiron Rails App - Feedly
 
 # Future Features
 - Entries
-  -
+  - add tags to `entry#show`
   - capture state (read / unread or something)
+    - on click, change status
+    - need an entry_state model (user_id, entry_id, read?, etc)
   - use templates to show entries across the app (on Tag pages, Feed pages, etc)
 - Feeds
   - add Feed name aliases
