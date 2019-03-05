@@ -97,8 +97,10 @@ Flatiron Rails App - Feedly
 
 # Future Features
 - Entries
-  -
+  - add tags to `entry#show`
   - capture state (read / unread or something)
+    - on click, change status
+    - need an entry_state model (user_id, entry_id, read?, etc)
   - use templates to show entries across the app (on Tag pages, Feed pages, etc)
 - Feeds
   - add Feed name aliases
