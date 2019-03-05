@@ -26,18 +26,20 @@ class Feed < ApplicationRecord
   end
 
   def self.add_scheme_to_search_url(search_term)
-    http = Feed.find_by(url: "http://#{search_term}")
-    https = Feed.find_by(url: "https://#{search_term}")
+    if search_term
+      http = Feed.find_by(url: "http://#{search_term}")
+      https = Feed.find_by(url: "https://#{search_term}")
 
-    if http
-      @feed = http
-    elsif https
-      @feed = https
+      if http
+        @feed = http
+      elsif https
+        @feed = https
+      end
     end
   end
 
   def self.find_feed_from_url(url)
-    Feedbag.find(url).first
+    Feedbag.find(url).first if url
   end
 
   def self.fetch_and_parse_feed(feed)

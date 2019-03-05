@@ -14,7 +14,7 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed.save
+    # @feed.save
     redirect_to feed_path(@feed)
   end
 

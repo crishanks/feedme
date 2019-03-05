@@ -8,10 +8,7 @@
 
 <h3>Results</h3>
 
-<%= form_tag new_feed_path, method: :post do %>
-    <%= @feed.title %>
-    <%= submit_tag "Subscribe to Feed" %>
+<%= form_tag feeds_path, method: :post do %>
+    <%= @feed.title if @feed %>
+    <%= submit_tag "Subscribe to Feed" if @feed %>
 <% end %>
-
-  
-
