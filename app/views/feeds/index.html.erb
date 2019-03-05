@@ -1,5 +1,7 @@
 <h1>All Feeds</h1>
 
+<h3><%= link_to "Add Content", new_feed_subscription_path %></h3>
+
 <ul>
   <% @feeds.each do |feed| %>
     <li>

@@ -9,6 +9,15 @@ class FeedsController < ApplicationController
 
   end
 
+  def new
+    @feed = Feed.search(params[:search])
+  end
+
+  def create
+    @feed.save
+    redirect_to feed_path(@feed)
+  end
+
   private
 
   def set_feed
