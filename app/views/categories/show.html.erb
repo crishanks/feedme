@@ -1,0 +1,9 @@
+<h1><%= @category.title %></h1>
+
+<ul>
+  <% @category.feeds.each do |feed| %>
+    <li>
+      <%= link_to feed.title, feed_path(feed) %><br>
+    </li>
+  <% end %>
+</ul>

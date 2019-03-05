@@ -75,9 +75,9 @@ Flatiron Rails App - Feedly
 # Functionality
 # MVP
 1. Add Content Page
-    1. Can enter a URL and see a list of content entries from a feed
-    2. Can subscribe to or save that feed
-    3. Can choose feeds from a curated list (This is stage 2 functionality)
+    1. Can enter a URL and see a list of content entries from a feed (MVP)
+    2. Can subscribe to or save that feed (MVP)
+    3. Can choose feeds from a curated list (Stage 2)
 2. Login/Logout - Welcome Page
     1. Link to analytics/discovery
 3. Show My Content - Homepage
@@ -99,6 +99,7 @@ Flatiron Rails App - Feedly
 - Entries
   -
   - capture state (read / unread or something)
+  - use templates to show entries across the app (on Tag pages, Feed pages, etc)
 - Feeds
   - add Feed name aliases
   - on `feed#show`, group entries by published date

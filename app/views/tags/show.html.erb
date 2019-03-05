@@ -1,0 +1,12 @@
+<h1><%= @tag.name %></h1>
+
+<ul>
+  <% @tag.entries.each do |entry| %>
+    <li>
+      <%= link_to entry.title, feed_entry_path(entry.feed, entry) %>
+      <p><%= "#{entry.author} - #{entry.published_datetime.to_date} - " %>
+        <%=link_to entry.feed.title, feed_path(entry.feed) %></p>
+      <p><%= sanitize entry.summary %></p>
+    </li><br>
+  <% end %>
+</ul>
