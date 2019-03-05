@@ -17,6 +17,7 @@ one_done = Feed.create(url: one_feed.url, description: one_feed.description, tit
 one_feed.entries.each do |entry|
   Entry.create(feed: one_done, title: entry.title, url: entry.url, author: entry.author, published_datetime: entry.published, summary: entry.summary)
 end
+
 users = User.create(
     [
         {name: "Greg"},
