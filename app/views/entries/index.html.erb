@@ -1,0 +1,10 @@
+<h1>All Entries</h1>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <%= link_to entry.title, entry_path(entry) %><br>
+      <%= "#{entry.author} - #{entry.published_datetime.to_date}" %>
+    </li>
+  <% end %>
+</ul>

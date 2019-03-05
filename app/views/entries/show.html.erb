@@ -1,0 +1,4 @@
+<h1><%= link_to @entry.title, @entry.url %></h1>
+<h3><%= "#{@entry.author} - #{@entry.published_datetime.to_date}" %></h3>
+
+<p><%= sanitize @entry.summary %></p>

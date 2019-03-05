@@ -60,9 +60,13 @@ Flatiron Rails App - Feedly
 # Routes / Controllers
 - Users Controller
 - Feeds Controller
-  - show, index, (new, create), destroy
+  - show
+  - index
+  - (new, create)
+  - destroy
 - Entries Controller
-  - show, index
+  - [ ] show
+  - [ ] index
 - Categories Controller
   - show, index, new, create, destroy, edit, update (name?)
 - Tags Controller
