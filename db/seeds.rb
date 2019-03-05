@@ -33,13 +33,26 @@ urls = ["101cookbooks.com", "https://hyperallergic.com/"]
 urls.each do |url|
   feed = Feedbag.find(url).first
   feed = Feedjira::Feed.fetch_and_parse(feed)
-  new_feed = Feed.create(url: feed.url, description: feed.description, title: feed.title)
+  new_feed = Feed.create(
+    url: feed.url,
+    description: feed.description,
+    title: feed.title,
+    categories: Category.all.sample(1)
+  )
 
   feed.entries.each do |entry|
-    Entry.create(feed: new_feed, title: entry.title, url: entry.url, author: entry.author, published_datetime: entry.published, summary: entry.summary)
+    Entry.create(
+      feed: new_feed,
+      title: entry.title,
+      url: entry.url,
+      author: entry.author,
+      published_datetime: entry.published,
+      summary: entry.summary,
+      tags: Tag.all.sample(1)
+    )
   end
 end
 
-# 10.times {
-#   EntryTag
-# }
+# User.all.sample(3).each do |user|
+  # user.feeds = Feed.all.sample(1)
+# end
