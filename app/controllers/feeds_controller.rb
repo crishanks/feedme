@@ -1,6 +1,7 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show]
 
+
   def index
     @feeds = Feed.all
   end
@@ -13,8 +14,8 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = Feed.create(feed_params)
-    # FeedSubscription.create(@user, @feed)
+    @feed = Feed.find_or_create_by(feed_params)
+    new_sub = FeedSubscription.create(user: @current_user, feed: @feed)
     redirect_to feed_path(@feed)
   end
 

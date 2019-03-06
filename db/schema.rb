@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
   create_table "entry_tags", force: :cascade do |t|
     t.integer "entry_id"
     t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["entry_id"], name: "index_entry_tags_on_entry_id"
     t.index ["tag_id"], name: "index_entry_tags_on_tag_id"
   end
@@ -49,6 +51,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
   create_table "feed_to_category_helpers", force: :cascade do |t|
     t.integer "feed_category_id"
     t.integer "feed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["feed_category_id"], name: "index_feed_to_category_helpers_on_feed_category_id"
     t.index ["feed_id"], name: "index_feed_to_category_helpers_on_feed_id"
   end
