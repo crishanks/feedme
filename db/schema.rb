@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
     t.string "name"
     t.string "username"
     t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
