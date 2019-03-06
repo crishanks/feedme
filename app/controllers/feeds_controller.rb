@@ -3,7 +3,7 @@ class FeedsController < ApplicationController
 
 
   def index
-    @feeds = Feed.all
+    @feeds = @current_user.feeds
   end
 
   def show
