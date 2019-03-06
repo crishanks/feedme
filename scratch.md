@@ -99,21 +99,36 @@ Flatiron Rails App - Feedly
 # Functionality
 # MVP
 1. Add Content Page
-  - [ ] Can enter a URL and see a list of content entries from a feed (MVP)
-  - [ ] Can subscribe to or save that feed (MVP)
-  - [ ] Can choose feeds from a curated list (Stage 2)
-2. Login/Logout - Welcome Page
-  - Link to analytics/discovery
-3. Show My Content - Homepage
-  - [ ] When I’m logged in I can see all of my saved feeds
+  - [x] Can enter a URL and see the associated feed (MVP)
+  - [x] Can subscribe to or save that feed (MVP)
+  - [ ] Can view initial entries by clicking on feed and subscribe from that view (Stage 1.5)
+  - [ ] Can choose feeds from a curated list / search by topic (Stage 2)
+2. Entries
+  - [x] View all (available) entries by clicking on a feed, sorted by descending date
+  - [x] View entry contents by clicking on title from feed
+  - [x] Can link back to feed from entry#show
+  - [x] Can link out to original content source
+  - [ ] Can view all tags assigned to entry
+  - [ ] Can navigate to previous/next entries in feed
+  - [ ] Can hide / delete an entry (Stage 2)
+  - [ ] Can choose sort order from feed/entry#index (Stage 2)
+3. Login/Logout - Welcome Page
+  - [x] Can log-in to app
+  - [x] Can log-out to app
+  - [ ] Link to analytics/discovery
+4. Show My Content - Homepage
+  - [x] When I’m logged in I can see all of my saved feeds
   - [ ] Should be able to see all of the articles for each of those saved feeds (upon clicking on feed)
   - [ ] See a summary of the content and link out to the source of the content
-4. Update/edit Feed Categories such as Music, Food, Tech etc.
+5. Update/edit Feed Categories such as Music, Food, Tech etc.
   - [ ] Add a feed to a category
   - [ ] Remove a feed from a category
-5. Tag an article
-  - [ ] Add a tag to an article
-  - [ ] Be able to see a list of articles that share a tag
+6. Tag an Entry
+  - [ ] Add a tag to an entry
+  - [ ] Be able to see a list of entries that share a tag
+7. Navigation
+  - [ ] Go "back" from an page
+  - [ ] Sidebar navigation
 
 # Tools and Gems
 1. Feedbag - find rss feed urls
