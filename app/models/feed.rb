@@ -11,16 +11,17 @@ class Feed < ApplicationRecord
     @feed = add_scheme_to_search_url(search_term)
 
     if @feed.nil?
-      feed = find_feed_from_url(search_term)
+      feed_url = find_feed_from_url(search_term)
 
-      if !feed.nil?
-        feed = fetch_and_parse_feed(feed)
+      if !feed_url.nil?
+        feed = fetch_and_parse_feed(feed_url)
 
         @feed = Feed.new(
           url: feed.url,
+          feed_url: feed_url,
           description: feed.description,
           title: feed.title,
-          categories: Category.all.sample(1)
+          feed_categories: FeedCategory.all.sample(1)
           )
         end
     else
