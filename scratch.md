@@ -110,6 +110,7 @@ Flatiron Rails App - Feedly
   - [x] Can link out to original content source
   - [ ] Can view all tags assigned to entry
   - [ ] Can navigate to previous/next entries in feed
+  - [ ] Can refresh entries from feed#index and entries#index
   - [ ] Can hide / delete an entry (Stage 2)
   - [ ] Can choose sort order from feed/entry#index (Stage 2)
 3. Login/Logout - Welcome Page
