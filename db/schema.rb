@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_03_04_213042) do
 
-  create_table "categories", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "entries", force: :cascade do |t|
     t.integer "feed_id"
     t.string "title"
@@ -38,10 +32,11 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
   end
 
   create_table "feed_categories", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "feed_id"
-    t.index ["category_id"], name: "index_feed_categories_on_category_id"
-    t.index ["feed_id"], name: "index_feed_categories_on_feed_id"
+    t.integer "user_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_feed_categories_on_user_id"
   end
 
   create_table "feed_subscriptions", force: :cascade do |t|
@@ -49,6 +44,13 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
     t.integer "feed_id"
     t.index ["feed_id"], name: "index_feed_subscriptions_on_feed_id"
     t.index ["user_id"], name: "index_feed_subscriptions_on_user_id"
+  end
+
+  create_table "feed_to_category_helpers", force: :cascade do |t|
+    t.integer "feed_category_id"
+    t.integer "feed_id"
+    t.index ["feed_category_id"], name: "index_feed_to_category_helpers_on_feed_category_id"
+    t.index ["feed_id"], name: "index_feed_to_category_helpers_on_feed_id"
   end
 
   create_table "feeds", force: :cascade do |t|
@@ -61,8 +63,10 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

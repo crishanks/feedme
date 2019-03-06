@@ -1,4 +1,7 @@
 class User < ApplicationRecord
   has_many :feed_subscriptions
   has_many :feeds, through: :feed_subscriptions
+  has_many :feed_categories
+  has_many :tags
+  has_many :entries, through: :feeds
 end

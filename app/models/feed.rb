@@ -1,7 +1,10 @@
 class Feed < ApplicationRecord
-  has_many :feed_categories
-  has_many :categories, through: :feed_categories
+  has_many :feed_subscriptions
+  has_many :users, through: :feed_subscriptions
+  has_many :feed_to_category_helpers
+  has_many :feed_categories, through: :feed_to_category_helpers
   has_many :entries
+  has_many :tags, through: :entries
 
   def self.search(search_term)
 

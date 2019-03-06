@@ -8,23 +8,23 @@ users = User.create(
     ]
 )
 
-categories = Category.create(
+categories = FeedCategory.create(
     [
-        {title: "Music"},
-        {title: "Tech"},
-        {title: "Food"},
-        {title: "Education"},
-        {title: "Woodworking"}
+        {title: "Music", user: User.all.sample},
+        {title: "Tech", user: User.all.sample},
+        {title: "Food", user: User.all.sample},
+        {title: "Education", user: User.all.sample},
+        {title: "Woodworking", user: User.all.sample}
     ]
 )
 
 tags = Tag.create(
     [
-        {name: "Top 5"},
-        {name: "Really Cool"},
-        {name: "To Try Later"},
-        {name: "Great for Christmas"},
-        {name: "So fun!"}
+        {name: "Top 5", user: User.all.sample},
+        {name: "Really Cool", user: User.all.sample},
+        {name: "To Try Later", user: User.all.sample},
+        {name: "Great for Christmas", user: User.all.sample},
+        {name: "So fun!", user: User.all.sample}
     ]
 )
 
@@ -37,7 +37,7 @@ urls.each do |url|
     url: feed.url,
     description: feed.description,
     title: feed.title,
-    categories: Category.all.sample(1)
+    feed_categories: FeedCategory.all.sample(1)
   )
 
   feed.entries.each do |entry|
