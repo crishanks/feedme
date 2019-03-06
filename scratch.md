@@ -99,15 +99,15 @@ Flatiron Rails App - Feedly
 # Functionality
 # MVP
 1. Add Content Page
-    1. Can enter a URL and see a list of content entries from a feed (MVP)
-    2. Can subscribe to or save that feed (MVP)
-    3. Can choose feeds from a curated list (Stage 2)
+  - [ ] Can enter a URL and see a list of content entries from a feed (MVP)
+  - [ ] Can subscribe to or save that feed (MVP)
+  - [ ] Can choose feeds from a curated list (Stage 2)
 2. Login/Logout - Welcome Page
-    1. Link to analytics/discovery
+  - Link to analytics/discovery
 3. Show My Content - Homepage
-    1. When I’m logged in I can see all of my saved feeds
-    2. Should be able to see all of the articles for each of those saved feeds (upon clicking on feed)
-    3. See a summary of the content and link out to the source of the content
+  - [ ] When I’m logged in I can see all of my saved feeds
+  - [ ] Should be able to see all of the articles for each of those saved feeds (upon clicking on feed)
+  - [ ] See a summary of the content and link out to the source of the content
 4. Update/edit Feed Categories such as Music, Food, Tech etc.
     1. Add a feed to a category
     2. Remove a feed from a category
@@ -129,3 +129,6 @@ Flatiron Rails App - Feedly
 - Feeds
   - add Feed name aliases
   - on `feed#show`, group entries by published date
+  - when searching to add content, how to be more flexible w accepted search terms?
+    - google activerecord pattern matching / text matching
+    - OR save feed_url to Feed

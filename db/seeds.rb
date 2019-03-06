@@ -31,10 +31,11 @@ tags = Tag.create(
 urls = ["101cookbooks.com", "https://hyperallergic.com/"]
 
 urls.each do |url|
-  feed = Feedbag.find(url).first
-  feed = Feedjira::Feed.fetch_and_parse(feed)
+  feed_url = Feedbag.find(url).first
+  feed = Feedjira::Feed.fetch_and_parse(feed_url)
   new_feed = Feed.create(
     url: feed.url,
+    feed_url: feed_url,
     description: feed.description,
     title: feed.title,
     feed_categories: FeedCategory.all.sample(1)

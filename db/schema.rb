@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
   create_table "feeds", force: :cascade do |t|
     t.string "title"
     t.string "url"
+    t.string "feed_url"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
