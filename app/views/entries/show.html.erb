@@ -1,4 +1,9 @@
 <h1><%= link_to @entry.title, @entry.url %></h1>
-<h3><%= "#{@entry.author} - #{@entry.published_datetime.to_date}" %></h3>
+<p><%= link_to  @entry.feed.title, feed_path(@entry.feed) %> <%= "by #{@entry.author} / #{@entry.published_datetime.strftime("%-d %b %Y")} // read // hide" %></p>
+
 
 <p><%= sanitize @entry.summary %></p>
+
+<%= button_to "Previous", feed_entry_path(@entry.feed, @entry.id - 1), method: :get %>
+<%= button_to "Next", feed_entry_path(@entry.feed, @entry.id + 1), method: :get %>
+

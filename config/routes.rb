@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :feed_categories
   resources :feeds, only: [:index, :new, :create, :show] do
-    resources :entries, only: [:show, :index]
+    resources :entries, only: [:index, :show]
   end
   resources :users
   resources :feed_subscriptions
