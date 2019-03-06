@@ -1,11 +1,11 @@
 users = User.create(
-    [
-        {name: "Greg", username: "Greg#{rand(25)}"},
-        {name: "Ted", username: "Ted#{rand(25)}"},
-        {name: "Jill", username: "Jill#{rand(25)}"},
-        {name: "Barbara", username: "Barbara#{rand(25)}"},
-        {name: "Steve", username: "Steve#{rand(25)}"}
-    ]
+  [
+    {name: "Greg", username: "Greg#{rand(25)}", password: "abcd", password_confirmation: "abcd"},
+    {name: "Ted", username: "Ted#{rand(25)}", password: "abcd", password_confirmation: "abcd"},
+    {name: "Jill", username: "Jill#{rand(25)}", password: "abcd", password_confirmation: "abcd"},
+    {name: "Barbara", username: "Barbara#{rand(25)}", password: "abcd", password_confirmation: "abcd"},
+    {name: "Steve", username: "Steve#{rand(25)}", password: "abcd", password_confirmation: "abcd"}
+  ]
 )
 
 categories = FeedCategory.create(

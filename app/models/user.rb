@@ -7,7 +7,9 @@ class User < ApplicationRecord
   has_many :tags
   has_many :entries, through: :feeds
 
+  #validations
   validates :username, {presence: true, uniqueness: true}
+  
   #authentication
   has_secure_password
 
