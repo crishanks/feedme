@@ -15,7 +15,12 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.find_or_create_by(feed_params)
-    new_sub = FeedSubscription.create(user: @current_user, feed: @feed)
+    new_sub = FeedSubscription.find_or_create_by(user: @current_user, feed: @feed)
+    redirect_to feed_path(@feed)
+  end
+
+  def update
+    @feed = Feed.find(params[:id])
     redirect_to feed_path(@feed)
   end
 
