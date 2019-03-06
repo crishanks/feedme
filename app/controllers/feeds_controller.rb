@@ -6,7 +6,6 @@ class FeedsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -14,7 +13,8 @@ class FeedsController < ApplicationController
   end
 
   def create
-    # @feed.save
+    @feed = Feed.create(feed_params)
+    # FeedSubscription.create(@user, @feed)
     redirect_to feed_path(@feed)
   end
 
@@ -23,4 +23,9 @@ class FeedsController < ApplicationController
   def set_feed
     @feed = Feed.find(params[:id])
   end
+
+  def feed_params
+    params.require(:feed).permit(:title, :url, :description, :search)
+  end
+
 end
