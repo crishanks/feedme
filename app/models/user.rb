@@ -4,4 +4,6 @@ class User < ApplicationRecord
   has_many :feed_categories
   has_many :tags
   has_many :entries, through: :feeds
+
+  validates :username, {presence: true, uniqueness: true}
 end

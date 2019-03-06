@@ -109,11 +109,11 @@ Flatiron Rails App - Feedly
   - [ ] Should be able to see all of the articles for each of those saved feeds (upon clicking on feed)
   - [ ] See a summary of the content and link out to the source of the content
 4. Update/edit Feed Categories such as Music, Food, Tech etc.
-    1. Add a feed to a category
-    2. Remove a feed from a category
+  - [ ] Add a feed to a category
+  - [ ] Remove a feed from a category
 5. Tag an article
-    1. Add a tag to an article
-    2. Be able to see a list of articles that share a tag
+  - [ ] Add a tag to an article
+  - [ ] Be able to see a list of articles that share a tag
 
 # Tools and Gems
 1. Feedbag - find rss feed urls
