@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :tags
-  resources :categories
+  resources :feed_categories
   resources :feeds, only: [:index, :new, :create, :show] do
     resources :entries, only: [:show, :index]
   end
