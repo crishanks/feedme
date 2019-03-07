@@ -1,0 +1,12 @@
+
+
+<%= form_for :feed do |f| %>
+  <%= f.label :feed_categories %>
+  <%= f.collection_check_box :feed_categories @current_user.feed_categories, :id, :title %>
+
+  <p>New Category</p>
+  <%= f.fields_for :feed_categories, @current_user.feed_categories.build do |cat| %>
+    <%= cat.label :title %>
+    <%= cat.text_field :title %>
+  <% end %>
+<% end %>
