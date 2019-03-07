@@ -11,7 +11,6 @@ class FeedsController < ApplicationController
 
   def new
     @feed = Feed.search(params[:search])
-    @new_sub = @feed.feed_subscriptions.build if @feed
   end
 
   def create
