@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: [:show]
+  before_action :set_feed, only: [:show, :update]
 
 
   def index
@@ -23,7 +23,6 @@ class FeedsController < ApplicationController
   end
 
   def update
-    @feed = Feed.find(params[:id])
     @new_feed = FeedSubscription.find_or_create_by(user: @current_user, feed: @feed)
 
     redirect_to feed_path(@feed)
