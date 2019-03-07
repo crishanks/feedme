@@ -5,7 +5,7 @@ class Feed < ApplicationRecord
   has_many :feed_categories, through: :feed_to_category_helpers
   has_many :entries
   has_many :tags, through: :entries
-
+  
   def self.search(search_term)
 
     @feed = add_scheme_to_search_url(search_term)

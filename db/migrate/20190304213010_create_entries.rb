@@ -3,10 +3,11 @@ class CreateEntries < ActiveRecord::Migration[5.2]
     create_table :entries do |t|
       t.references :feed
       t.string :title
-      t.string :url
       t.string :author
-      t.datetime :published_datetime
       t.text :summary
+      t.text :content
+      t.string :url
+      t.datetime :published_datetime
 
       t.timestamps
     end

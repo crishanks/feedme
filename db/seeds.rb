@@ -49,6 +49,7 @@ urls.each do |url|
       author: entry.author,
       published_datetime: entry.published,
       summary: entry.summary,
+      content: entry.content,
       tags: Tag.all.sample(1)
     )
   end

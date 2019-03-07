@@ -15,10 +15,11 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
   create_table "entries", force: :cascade do |t|
     t.integer "feed_id"
     t.string "title"
-    t.string "url"
     t.string "author"
-    t.datetime "published_datetime"
     t.text "summary"
+    t.text "content"
+    t.string "url"
+    t.datetime "published_datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["feed_id"], name: "index_entries_on_feed_id"
@@ -44,6 +45,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_213042) do
   create_table "feed_subscriptions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "feed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["feed_id"], name: "index_feed_subscriptions_on_feed_id"
     t.index ["user_id"], name: "index_feed_subscriptions_on_user_id"
   end
