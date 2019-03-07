@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: [:show, :update, :refresh]
+  before_action :set_feed, only: [:show, :update, :refresh, :settings]
 
 
   def index
@@ -32,6 +32,11 @@ class FeedsController < ApplicationController
     @feed.refresh_feed
 
     redirect_to feed_path(@feed)
+  end
+
+  def settings
+    # binding.pry
+    # @current_user.feed_categories
   end
 
   private

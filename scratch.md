@@ -109,8 +109,11 @@ Flatiron Rails App - Feedly
   - [x] Can link back to feed from entry#show
   - [x] Can link out to original content source
   - [ ] Can view all tags assigned to entry
-  - [ ] Can navigate to previous/next entries in feed
-  - [ ] Can refresh entries from feed#index and entries#index
+  - [x] Can navigate to previous/next entries in feed
+    - [ ] Need to refactor to account for beg / end of feed
+    - [ ] Need to refactor to account for non-contiguous entry ids
+  - [x] Can refresh entries from feed#index
+  - [ ] Can refresh entries from entries#index
   - [ ] Can hide / delete an entry (Stage 2)
   - [ ] Can choose sort order from feed/entry#index (Stage 2)
 3. Login/Logout - Welcome Page
@@ -119,8 +122,9 @@ Flatiron Rails App - Feedly
   - [ ] Link to analytics/discovery
 4. Show My Content - Homepage
   - [x] When I’m logged in I can see all of my saved feeds
-  - [ ] Should be able to see all of the articles for each of those saved feeds (upon clicking on feed)
-  - [ ] See a summary of the content and link out to the source of the content
+  - [x] Should be able to see all of the articles for each of those saved feeds (upon clicking on feed)
+  - [x] See a summary of the content and link out to the source of the content
+    - [ ] Check on feeds without feed[:content] key, how do they display?
 5. Update/edit Feed Categories such as Music, Food, Tech etc.
   - [ ] Add a feed to a category
   - [ ] Remove a feed from a category
@@ -128,8 +132,13 @@ Flatiron Rails App - Feedly
   - [ ] Add a tag to an entry
   - [ ] Be able to see a list of entries that share a tag
 7. Navigation
-  - [ ] Go "back" from an page
-  - [ ] Sidebar navigation
+  - [ ] Root is feeds#index, unless not logged-in
+  - [ ] Can return to feeds#index from any page
+  - [ ] Sidebar navigation (dependent on ease of implementation)
+8. Feed Settings
+  - [ ] Can add / remove feed categories
+  - [ ] Can change feed's "display name"
+    - [ ] Add "display name" to feed_subscription model
 
 # Tools and Gems
 1. Feedbag - find rss feed urls
