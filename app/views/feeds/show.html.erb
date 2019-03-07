@@ -1,4 +1,5 @@
 <h1><%= @feed.title %></h1>
+<p><%= link_to "Refresh Feed", refresh_feed_path(@feed) %></p>
 
 <ul>
   <% @feed.entries.each do |entry| %>

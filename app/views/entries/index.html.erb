@@ -4,7 +4,7 @@
   <% @entries.each do |entry| %>
     <li>
       <%= link_to entry.title, feed_entry_path(entry.feed, entry) %><br>
-      <%= "#{entry.author} - #{entry.published_datetime.to_date}" %>
+      <%= link_to  entry.feed.title, feed_path(entry.feed) %> <%= "by #{entry.author} / #{entry.published_datetime.strftime("%-d %b %Y")}" %>
     </li>
   <% end %>
 </ul>

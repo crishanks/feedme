@@ -5,7 +5,7 @@ class Feed < ApplicationRecord
   has_many :feed_categories, through: :feed_to_category_helpers
   has_many :entries
   has_many :tags, through: :entries
-  
+
   def self.search(search_term)
 
     @feed = add_scheme_to_search_url(search_term)
@@ -48,5 +48,22 @@ class Feed < ApplicationRecord
 
   def self.fetch_and_parse_feed(feed)
     Feedjira::Feed.fetch_and_parse(feed)
+  end
+
+  def refresh_feed
+    new_entries = Feed.fetch_and_parse_feed(self.feed_url)
+
+    new_entries.entries.each do |entry|
+      if !!Entry.where(url: entry.url)
+        Entry.create(feed: self,
+          title: entry.title,
+          url: entry.url,
+          author: entry.author,
+          published_datetime: entry.published,
+          summary: entry.summary,
+          content: entry.content
+        )
+      end
+    end
   end
 end

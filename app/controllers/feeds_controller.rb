@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: [:show, :update]
+  before_action :set_feed, only: [:show, :update, :refresh]
 
 
   def index
@@ -24,6 +24,12 @@ class FeedsController < ApplicationController
 
   def update
     @new_feed = FeedSubscription.find_or_create_by(user: @current_user, feed: @feed)
+
+    redirect_to feed_path(@feed)
+  end
+
+  def refresh
+    @feed.refresh_feed
 
     redirect_to feed_path(@feed)
   end
