@@ -1,0 +1,13 @@
+
+
+<%= form_for @feed, url: settings_feed_path(@feed) do |f| %>
+  <%= f.label :feed_categories, "Categories" %><br>
+  <%= f.collection_check_boxes :feed_category_ids, @current_user.feed_categories, :id, :title%><br>
+
+  <%= f.fields_for :feed_categories, @current_user.feed_categories.build do |cat| %>
+    <%= cat.label :title, 'New Category' %><br>
+    <%= cat.text_field :title %>
+  <% end %><br>
+
+  <%= f.submit value: 'Save' %>
+<% end %>

@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   resources :tags
   resources :feed_categories
   resources :feeds, only: [:index, :new, :create, :show, :update] do
+    member do
+      # recognizes get `/feeds/:id/settings` and routes to feeds#settings, w feed.id passed in params[:id] & settings_feed_path helper created
+      get 'settings'
+      post 'settings'
+      patch 'settings'
+    end
     resources :entries, only: [:show]
     get '/entries', to: 'entries#refresh'
   end

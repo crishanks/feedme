@@ -135,6 +135,10 @@ Flatiron Rails App - Feedly
   - [ ] Root is feeds#index, unless not logged-in
   - [ ] Can return to feeds#index from any page
   - [ ] Sidebar navigation (dependent on ease of implementation)
+8. Feed Settings
+  - [ ] Can add / remove feed categories
+  - [ ] Can change feed's "display name"
+    - [ ] Add "display name" to feed_subscription model
 
 # Tools and Gems
 1. Feedbag - find rss feed urls

@@ -3,7 +3,8 @@ class CreateFeedSubscriptions < ActiveRecord::Migration[5.2]
     create_table :feed_subscriptions do |t|
       t.references :user, foreign_key: true
       t.references :feed, foreign_key: true
-
+      t.string :display_name
+      
       t.timestamps
     end
   end
