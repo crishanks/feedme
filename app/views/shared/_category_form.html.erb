@@ -1,15 +1,17 @@
 
-
+<ul>
 <%= form_for @feed, url: settings_feed_path(@feed) do |f| %>
   <%= f.hidden_field :id %>
 
-  <%= f.label :feed_categories, "Categories" %><br>
-  <%= f.collection_check_boxes :feed_category_ids, @current_user.feed_categories, :id, :title%><br>
+  <li><%= f.label :feed_categories, "Categories" %></li>
+  <li><%= f.collection_check_boxes :feed_category_ids, @current_user.feed_categories, :id, :title%></li>
 
   <%= f.fields_for :feed_categories, @current_user.feed_categories.build do |cat| %>
-    <%= cat.label :title, 'New Category' %><br>
-    <%= cat.text_field :title %>
-  <% end %><br>
+    <li> <%= cat.label :title, 'New Category' %></li>
+    <li><%= cat.text_field :title %></li>
+  <% end %>
 
-  <%= f.submit value: 'Save' %>
-<% end %>
+
+  <li><%= f.submit value: 'Save' %></li>
+  <% end %>
+</ul>

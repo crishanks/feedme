@@ -1,6 +1,8 @@
-<%= button_to "Home", root_path, :method => "get" %>
+<div class="header">
+  <%= button_to "Home", root_path, :method => "get" %>
 
-<h1><%= @feed_category.title %></h1>
+  <h1><%= @feed_category.title %></h1>
+</div>
 
 <ul>
   <% @feed_category.feeds.each do |feed| %>

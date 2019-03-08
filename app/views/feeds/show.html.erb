@@ -1,12 +1,16 @@
-<%= button_to "Home", root_path, :method => "get" %>
+<div class="header">
+  <%= button_to "Home", root_path, :method => "get" %>
+  <h1><%= @feed.title %></h1>
+</div>
 
-<h1><%= @feed.title %></h1>
+<div class="sub_header">
+  <%= link_to "Refresh Feed", refresh_feed_path(@feed) %> // <%= link_to "Feed Settings", settings_feed_path(@feed) %>
 
-<p><%= link_to "Refresh Feed", refresh_feed_path(@feed) %> // <%= link_to "Feed Settings", settings_feed_path(@feed) %></p>
+  <br><% @feed.feed_categories.each do |cat| %>
+  / <%= link_to cat.title, feed_category_path(cat) %> /
+  <% end %>
+</div>
 
-<% @feed.feed_categories.each do |cat| %>
-/ <%= link_to cat.title, feed_category_path(cat) %> /
-<% end %>
 
 <ul>
   <% @entries.each do |entry| %>

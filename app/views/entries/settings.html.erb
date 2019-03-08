@@ -1,16 +1,20 @@
-<h3>Add Tags to <%= @entry.title %></h3>
+<div class="header">
+  <h3>Add Tags to <%= @entry.title %></h3>
+</div>
 
+<div class="sub_header">
+  <ul>
+  <%= form_for @entry, url: settings_entry_path(@entry) do |f| %>
+    <li><%= f.hidden_field :id %></li>
 
-<%= form_for @entry, url: settings_entry_path(@entry) do |f| %>
-  <%= f.hidden_field :id %>
+    <label><%= f.label :tags, "Tags" %></label>
+    <li><%= f.collection_check_boxes :tag_ids, @current_user.tags, :id, :name%></li>
 
-  <%= f.label :tags, "Tags" %><br>
-  <%= f.collection_check_boxes :tag_ids, @current_user.tags, :id, :name%><br>
-
-  <%= f.fields_for :tags, @current_user.tags.build do |cat| %>
-    <%= cat.label :name, 'New Tag' %><br>
-    <%= cat.text_field :name %>
-  <% end %><br>
-
-  <%= f.submit value: 'Save' %>
-<% end %>
+    <%= f.fields_for :tags, @current_user.tags.build do |cat| %>
+      <li><%= cat.label :name, 'New Tag' %></li>
+      <li><%= cat.text_field :name %></li>
+    <% end %>
+  </ul>
+    <br><%= f.submit value: 'Save' %>
+  <% end %>
+</div>

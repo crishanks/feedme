@@ -1,0 +1,12 @@
+<div class="header">
+
+  <p>Entries by Day of Week (All Feeds)</p>
+  <%= column_chart entries_by_dow, label: "Entries" %><br>
+
+  <p>Entries by Hour of Day, PST (All Feeds)</p>
+  <%= area_chart entries_by_hour_of_day_pst, label: "Entries" %><br>
+
+  <p>Top Feeds by Avg Entries per Week</p>
+  <%= bar_chart AnalyticsHelper.top_five_feeds_by_entry_ct_wk %>
+
+</div>

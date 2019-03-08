@@ -1,23 +1,28 @@
-<%= button_to "Home", feeds_path, :method => "get" %>
 
-<h1>Susbcribe to a Feed</h1>
+<div class="header">
+  <%= button_to "Home", feeds_path, :method => "get" %>
 
-<%= form_tag(new_feed_path, method: :get) do %>
-    <%= label_tag(:search, "Search by URL") %>
-    <%= text_field_tag(:search, params[:search]) %>
-    <%= submit_tag ("Search") %>
-<% end %>
+  <h1>Susbcribe to a Feed</h1>
+</div>
 
-<h3>Results</h3>
-
-<% if @feed %>
-  <%= form_for @feed do |f| %>
-    <%= f.hidden_field :title %>
-    <%= f.hidden_field :url %>
-    <%= f.hidden_field :description %>
-    <%= f.hidden_field :feed_url %>
-    <%= f.label @feed.title %>
-
-    <%= f.submit "Subscribe to Feed" if @feed %>
+<div class="sub_header">
+  <%= form_tag(new_feed_path, method: :get) do %>
+      <%= label_tag(:search, "Search by URL") %>
+      <%= text_field_tag(:search, params[:search]) %>
+      <%= submit_tag ("Search") %>
   <% end %>
-<% end %>
+
+  <h3>Results</h3>
+
+  <% if @feed %>
+    <%= form_for @feed do |f| %>
+      <%= f.hidden_field :title %>
+      <%= f.hidden_field :url %>
+      <%= f.hidden_field :description %>
+      <%= f.hidden_field :feed_url %>
+      <%= f.label @feed.title %>
+
+      <br><%= f.submit "Subscribe to Feed" if @feed %>
+    <% end %>
+  <% end %>
+</div>
