@@ -1,28 +1,3 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-  margin: 5%
-}
 
-.form {
-  padding: 20px;
-  display: flex;
-  float: left;
-  z-index: 1;
-}
-
-.container {
-  justify-content: column;
-}
-
-.container, li {
-  list-style: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.new_user_link {
-
-}
 
 
