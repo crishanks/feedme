@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/feeds/:id/refresh', to: 'feeds#refresh', as: 'refresh_feed'
 
   #Session Routes
-  root 'feeds#index'
+  root 'application#home'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
