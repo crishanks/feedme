@@ -144,7 +144,7 @@ Flatiron Rails App - Feedly
   - [ ] Add a feed to a category
   - [ ] Remove a feed from a category
 6. Tag an Entry
-  - [ ] Add a tag to an entry
+  - [x] Add a tag to an entry
   - [ ] Be able to see a list of entries that share a tag
 7. Navigation
   - [x] Root is feeds#index, unless not logged-in

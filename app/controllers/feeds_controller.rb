@@ -42,7 +42,6 @@ class FeedsController < ApplicationController
   end
 
   def update_settings
-    # binding.pry
     @current_user.update_or_create_feed_cats(feed_params)
     redirect_to feed_path(@feed)
   end
