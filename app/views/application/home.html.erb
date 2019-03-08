@@ -1,6 +1,8 @@
-<h1>Feedme</h1>
+<div class="header">
+  <h1>Feedme</h1>
 
-<h3>Main Menu</h3>
+  <h3>Main Menu</h3>
+</div>
 
 <ul>
   <li><%= link_to "Feeds", feeds_path %></li>
@@ -8,3 +10,9 @@
   <li><%= link_to "Feed Categories", feed_categories_path %></li>
   <li><%= link_to "Tags", tags_path %></li>
 </ul>
+
+<div class="footer">
+  <%= form_tag logout_path do %>
+    <%= submit_tag "logout" %>
+  <% end %>
+</div>

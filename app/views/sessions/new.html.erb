@@ -1,19 +1,24 @@
-<h1>Login</h1>
+<div class="header">
+  <h1>Login</h1>
+</div>
 
 <% if flash[:notice]%>
     <%= flash[:notice] %>
 <% end %>
 
+<ul>
 <%= form_tag login_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
+    <li><%= label_tag :username %></li>
+    <li><%= text_field_tag :username %></li>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <li><%= label_tag :password %></li>
+    <li><%= password_field_tag :password %></li>
 
-    <%= submit_tag 'login' %>
+    <li><%= submit_tag 'login' %>
 <% end %>
+</ul>
 
-<h2>Don't Have an Account Yet?</h2>
-
-<%= button_to "Sign Up", new_user_path, :method => "get" %>
+<div class="sub_header">
+  <h2>Don't Have an Account Yet?</h2>
+  <%= button_to "Sign Up", new_user_path, :method => "get" %>
+</div>

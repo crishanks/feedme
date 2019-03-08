@@ -1,6 +1,8 @@
-<%= button_to "Home", root_path, :method => "get" %>
+<div class="header">
+  <%= button_to "Home", root_path, :method => "get" %>
 
-<h1>All Tags</h1>
+  <h1>All Tags</h1>
+</div>
 
 <ul>
   <% @tags.each do |tag| %>

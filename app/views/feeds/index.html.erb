@@ -1,19 +1,23 @@
-<%= button_to "Home", root_path, :method => "get" %>
+<div class="header">
+  <%= button_to "Home", root_path, :method => "get" %>
 
-<h1>All Feeds</h1>
+  <h1>All Feeds</h1>
+</div>
 
-<h3><%= link_to "Add Content", new_feed_path %></h3>
+<div class="sub_header">
+  <h3><%= link_to "Add Content", new_feed_path %></h3>
+</div>
 
 <ul>
   <% @feeds.each do |feed| %>
-    <li>
-      <%= link_to feed.title, feed_path(feed) %><br>
-      <%= feed.description %>
-    </li>
+    <li><%= link_to feed.title, feed_path(feed) %></li>
+    <li><%= feed.description %></li>
+    
   <% end %>
 </ul>
 
-
-<%= form_tag logout_path do %>
-  <%= submit_tag "logout" %>
-<% end %>
+<div class="footer">
+  <%= form_tag logout_path do %>
+    <%= submit_tag "logout" %>
+  <% end %>
+</div>
