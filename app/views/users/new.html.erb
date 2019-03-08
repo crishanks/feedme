@@ -1,4 +1,14 @@
-<h1>Sign Up</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheed" href="users.css" type="text/css">
+  <title>Feedme</title>
+</head>
+<body>
+  <h1 id="head">Sign Up</h1>
 
   <% if flash[:errors] %>
     <% flash[:errors].each do |message| %>
@@ -6,22 +16,31 @@
     <% end %>
   <% end %>
 
-<%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="container">
+    <ul>
+    <%= form_for @user do |f| %>
+      <li><%= f.label :name %></li>
+      <li><%= f.text_field :name %></li>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+      <li><%= f.label :username %></li>
+      <li><%= f.text_field :username %></li>
+  
+      <li><%= f.label :password %></li>
+      <li><%= f.password_field :password %></li>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+      <li><%= f.label :password_confirmation %></li>
+      <li><%= f. password_field :password_confirmation %></li>
 
-  <%= f.label :password_confirmation %>
-  <%= f. password_field :password_confirmation %>
+      <li><%= f.submit "Create Account" %></li>
+        <% end %>
+    </ul>
+  </div>
 
-  <%= f.submit "Create Account" %>
-<% end %>
+  <div class="container">
+    <h2 id="head">Already Have an Account?</h2>
+    <%= button_to "Login", login_path, :method => "get" %>
+  </div>
 
-<h2>Already Have an Account?</h2>
+</body>
+</html>
 
-<%= button_to "Login", login_path, :method => "get" %>

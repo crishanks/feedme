@@ -1,3 +1,28 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 5%
+}
+
+.form {
+  padding: 20px;
+  display: flex;
+  float: left;
+  z-index: 1;
+}
+
+.container {
+  justify-content: column;
+}
+
+.container, li {
+  list-style: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.new_user_link {
+
+}
+
+
