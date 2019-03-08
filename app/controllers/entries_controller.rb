@@ -6,6 +6,7 @@ class EntriesController < ApplicationController
   end
 
   def show
+
   end
 
   def refresh

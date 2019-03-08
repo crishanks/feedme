@@ -9,3 +9,8 @@
 <%= button_to "Previous", feed_entry_path(@entry.feed, @entry.id - 1), method: :get %>
 <%= button_to "Next", feed_entry_path(@entry.feed, @entry.id + 1), method: :get %>
 
+<ul>
+  <% @entry.tags.each do |tag| %>
+    <li><%= link_to tag.name, tag_path(tag) %></li>
+  <% end %>
+</ul>
