@@ -11,6 +11,7 @@ class FeedsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
