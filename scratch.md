@@ -147,11 +147,12 @@ Flatiron Rails App - Feedly
   - [ ] Add a tag to an entry
   - [ ] Be able to see a list of entries that share a tag
 7. Navigation
-  - [ ] Root is feeds#index, unless not logged-in
-  - [ ] Can return to feeds#index from any page
+  - [x] Root is feeds#index, unless not logged-in
+  - [x] Can return to feeds#index from any page
   - [ ] Sidebar navigation (dependent on ease of implementation)
 8. Feed Settings
-  - [ ] Can add / remove feed categories
+  - [x] Can add feed categories
+  - [ ] Can remove feed categories
   - [ ] Can change feed's "display name"
     - [ ] Add "display name" to feed_subscription model
 
