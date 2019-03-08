@@ -9,17 +9,22 @@ Flatiron Rails App - Feedly
         1. description
         2. url
         3. title (use .title)
+    3. validations
+      - validates :feed_url, {presence: true, uniqueness: true}
 2. Tag
     1. relationships
         1. has many entries through entry_tag
         2. has many article_tags
     2. attributes
         1. name
+    3. validations
+        - validates :name, {presence: true, uniqueness: true}
 3. Entry_tag
     1. relationships
         1. belongs to tag
         2. belongs to article
     2. attributes
+    3. validations
 4. Entry
     1. relationships
         1. belongs to a feed
@@ -32,17 +37,22 @@ Flatiron Rails App - Feedly
         4. entry_categories
         5. published_datetime
         6. summary
-5. Category
+    3. validations
+        - validates :url, { presence: true, uniqueness: true }
+5. FeedCategory
     1. relationships
         1. has many feeds through feed_categories
         2. has many feed_categories
     2. attributes
         1. title
-6. Feed Category
+    3. validations
+      - validates :title, uniqueness: { scope: :user_id }
+6. FeedToCategoryHelper
     1. relationships
         1. belongs to a feed
         2. belongs to a category
     2. attributes
+    3. validations
 7. User
     1. relationships
         1. has many feeds through user_feeds
@@ -51,11 +61,16 @@ Flatiron Rails App - Feedly
     2. attributes
         1. name
         2. password
+    3. validations
+      -   validates :username, {presence: true, uniqueness: true}
 8. Feed_Subscriptions
     1. relationships
         1. belongs to a user
         2. belongs to a feed
     2. attributes
+    3. validations
+      1. validates :username, {presence: true, uniqueness: true}
+
 
 # Routes / Controllers
 - Users Controller

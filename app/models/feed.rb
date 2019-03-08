@@ -6,6 +6,8 @@ class Feed < ApplicationRecord
   has_many :entries
   has_many :tags, through: :entries
 
+  validates :feed_url, {presence: true, uniqueness: true}
+
   def self.search(search_term)
 
     @feed = add_scheme_to_search_url(search_term)

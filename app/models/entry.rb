@@ -3,6 +3,8 @@ class Entry < ApplicationRecord
   has_many :entry_tags
   has_many :tags, through: :entry_tags
 
+  validates :url, { presence: true, uniqueness: true }
+
   def self.write_new_entries(parsed_feed)
     feed = Feed.find_by(url: parsed_feed.url)
 

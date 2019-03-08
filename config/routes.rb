@@ -5,8 +5,7 @@ Rails.application.routes.draw do
     member do
       # recognizes get `/feeds/:id/settings` and routes to feeds#settings, w feed.id passed in params[:id] & settings_feed_path helper created
       get 'settings'
-      post 'settings'
-      patch 'settings'
+      patch 'settings', to: 'feeds#update_settings'
     end
     resources :entries, only: [:show]
     get '/entries', to: 'entries#refresh'
