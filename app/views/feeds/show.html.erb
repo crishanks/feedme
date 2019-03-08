@@ -1,21 +1,19 @@
-<%= button_to "Home", feeds_path, :method => "get" %>
+<%= button_to "Home", root_path, :method => "get" %>
 
 <h1><%= @feed.title %></h1>
-<p><%= link_to "Refresh Feed", refresh_feed_path(@feed) %></p>
-<%= link_to "Feed Settings", settings_feed_path(@feed) %>
+
+<p><%= link_to "Refresh Feed", refresh_feed_path(@feed) %> // <%= link_to "Feed Settings", settings_feed_path(@feed) %></p>
+
+<% @feed.feed_categories.each do |cat| %>
+/ <%= link_to cat.title, feed_category_path(cat) %> /
+<% end %>
 
 <ul>
   <% @feed.entries.each do |entry| %>
     <li>
       <%= link_to entry.title, feed_entry_path(entry.feed, entry) %><br>
-      <%= "#{entry.author} - #{entry.published_datetime.to_date}" %>
+      <%= "#{entry.author} - #{entry.published_datetime.strftime("%-d %b %Y")}" %>
     </li>
   <% end %>
 </ul>
 
-<h3>Categories</h3>
-<ul>
-  <% @feed.feed_categories.each do |cat| %>
-    <li><%= link_to cat.title, feed_category_path(cat) %></li>
-  <% end %>
-</ul>
