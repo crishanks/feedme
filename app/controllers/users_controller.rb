@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     if user.valid?
       user.save
       session[:user_id] = user.id
-      redirect_to new_feeds_path
+      redirect_to feeds_path
     else
-      flash[:errors]
+      flash[:errors] = user.errors.full_messages
       redirect_to new_user_path
     end
   end

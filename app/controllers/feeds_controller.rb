@@ -2,7 +2,11 @@ class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :update, :refresh, :settings, :update_settings]
 
   def index
-    @feeds = @current_user.feeds
+    if !@current_user
+      redirect_to login_path
+    else
+      @feeds = @current_user.feeds
+    end
   end
 
   def show

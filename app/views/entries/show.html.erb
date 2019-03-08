@@ -1,3 +1,5 @@
+<%= button_to "Home", feeds_path, :method => "get" %>
+
 <h1><%= link_to @entry.title, @entry.url %></h1>
 <p><%= link_to  @entry.feed.title, feed_path(@entry.feed) %> <%= "by #{@entry.author} / #{@entry.published_datetime.strftime("%-d %b %Y")} // read // hide" %></p>
 
