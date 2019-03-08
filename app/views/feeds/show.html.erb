@@ -9,11 +9,10 @@
 <% end %>
 
 <ul>
-  <% @feed.entries.each do |entry| %>
+  <% @entries.each do |entry| %>
     <li>
       <%= link_to entry.title, feed_entry_path(entry.feed, entry) %><br>
       <%= "#{entry.author} - #{entry.published_datetime.strftime("%-d %b %Y")}" %>
     </li>
   <% end %>
 </ul>
-

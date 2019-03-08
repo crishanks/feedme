@@ -10,7 +10,7 @@ class FeedsController < ApplicationController
   end
 
   def show
-
+    @entries = @feed.entries.order(published_datetime: :desc)
   end
 
   def new
