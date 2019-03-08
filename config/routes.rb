@@ -10,7 +10,12 @@ Rails.application.routes.draw do
     resources :entries, only: [:show]
     get '/entries', to: 'entries#refresh'
   end
-  resources :entries, only: [:index]
+  resources :entries, only: [:index] do
+    member do
+      get 'settings'
+      patch 'settings', to: 'entries#update_settings'
+    end
+  end
   resources :users
   resources :feed_subscriptions
 
