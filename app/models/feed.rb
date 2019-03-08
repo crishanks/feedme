@@ -22,8 +22,7 @@ class Feed < ApplicationRecord
           url: feed.url,
           feed_url: feed_url,
           description: feed.description,
-          title: feed.title,
-          feed_categories: FeedCategory.all.sample(1)
+          title: feed.title
           )
         end
     else

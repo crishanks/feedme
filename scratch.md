@@ -155,11 +155,33 @@ Flatiron Rails App - Feedly
   - [ ] Can remove feed categories
   - [ ] Can change feed's "display name"
     - [ ] Add "display name" to feed_subscription model
+9. Analytics
+  - [ ] most popular feed categories
+  - [ ] most popular tags
+  - [x] most popular feeds, by subscription count
+    - `#top_five_feeds_by_sub`
+  - [x] feeds with most entries
+    - `#top_five_feeds_by_entry_ct`
+  - [ ] avg ct post per day, by feed
+  - [ ] avg ct unique post authors, by feed
+  - [ ] posting frequency by hour of day (to PST)
+    - `entries_by_hour_of_day_pst`
+  - [ ] posting freq by minute of day
+  - [x] posting freq by day of week
+      - `#entries_by_dow`
 
 # Tools and Gems
 1. Feedbag - find rss feed urls
 2. Feedjira - parse actual rss feed from rss urls
 
+# Presentation
+- What's an RSS Feed?
+- Why care?
+  - https://blog.feedly.com/how-rss-feeds-will-give-you-more-efficiency-and-control/
+-
+
+Seed feeds
+- www.bgdblog.org/
 # Future Features
 - Entries
   - add tags to `entry#show`
