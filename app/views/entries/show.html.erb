@@ -1,7 +1,13 @@
 <%= button_to "Home", feeds_path, :method => "get" %>
 
+
 <h1><%= link_to @entry.title, @entry.url %></h1>
 <p><%= link_to  @entry.feed.title, feed_path(@entry.feed) %> <%= "by #{@entry.author} / #{@entry.published_datetime.strftime("%-d %b %Y")} // read // hide" %></p>
+
+<% @entry.tags.each do |tag| %>
+/ <%= link_to tag.name, tag_path(tag) %> /
+<% end %>
+
 <%= link_to "Add Tags", settings_entry_path(@entry) %>
 
 
@@ -9,13 +15,3 @@
 
 <%= button_to "Previous", feed_entry_path(@entry.feed, @entry.id - 1), method: :get %>
 <%= button_to "Next", feed_entry_path(@entry.feed, @entry.id + 1), method: :get %>
-<<<<<<< HEAD
-
-<h3>Tags</h3>
-<ul>
-  <% @entry.tags.each do |tag| %>
-    <li><%= link_to tag.name, tag_path(tag) %></li>
-  <% end %>
-</ul>
-=======
->>>>>>> 60e904c5abccd999a6ee38de70280db1c2ce0b33
