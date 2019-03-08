@@ -12,3 +12,10 @@
     </li>
   <% end %>
 </ul>
+
+<h3>Categories</h3>
+<ul>
+  <% @feed.feed_categories.each do |cat| %>
+    <li><%= link_to cat.title, feed_category_path(cat) %></li>
+  <% end %>
+</ul>
