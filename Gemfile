@@ -50,6 +50,7 @@ group :development do
   gem 'pry-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rails-erd'
 end
 
 group :test do
@@ -64,5 +65,6 @@ end
 # gem "bootstrap_form", ">= 4.1.0"
 gem "twitter-bootstrap-rails"
 
+gem 'chartkick'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
